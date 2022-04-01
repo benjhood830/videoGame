@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 // "descriptionLabel" is the name od the label to ouput the current situation
 //option 1 = red
@@ -49,7 +50,7 @@ namespace videoGame
             {
                 int randValue = randGen.Next(1, 101);
 
-                if(randValue < 99)
+                if(randValue < 5)
                 {
                     page = 7;
                 }
@@ -131,7 +132,15 @@ namespace videoGame
             }
             else if (page == 96)
             {
-                page = 98;
+                page = 1;
+            }
+            else if (page == 97)
+            {
+                page = 1;
+            }
+            else if (page == 15)
+            {
+                page = 16;
             }
             DisplayPage();
         }
@@ -174,6 +183,14 @@ namespace videoGame
             {
                 page = 21;
             }
+            else if (page == 96)
+            {
+                page = 98;
+            }
+            else if (page == 97)
+            {
+                page = 98;
+            }
             DisplayPage();
         }
         public void DisplayPage()
@@ -186,9 +203,11 @@ namespace videoGame
                     startButton.Visible = false;
                     option1Button.Visible = true;
                     option2Button.Visible = true;
+                    option3Button.Visible = true;
                     descriptionLabel.Text = "It's another beautiful morning as the warmth of June seeps through the window.";
                     option1Label.Text = "Keep Sleeping";
                     option2Label.Text = "Wake up";
+                    option3Label.Text = "Die";
                     break;
                 case 2:
                     descriptionLabel.Text = "It's now 10 am and your mother comes in FURIOUS.";
@@ -259,7 +278,7 @@ namespace videoGame
                     descriptionLabel.Text = "There's a man hiding behind a dumpster in the alley. He pops out and takes a swing at you with a baseball bat.";
                     option3Label.Text = "";
                     option2Label.Text = "";
-                    option1Label.Text = "Coninue";
+                    option1Label.Text = "Continue";
 
                     option3Button.Visible = false;
                     option1Button.Visible = true;
@@ -267,16 +286,24 @@ namespace videoGame
                     break;
                 case 10:
                     descriptionLabel.Text = "You barely make it out alive but manage to run back the way you came from and into the haunted house.";
+                    option1Label.Text = "";
+                    option2Label.Text = "";
                     option3Label.Text = "Continue";
                     option3Button.Visible = true;
+                    option2Button.Visible = false; 
+                    option1Button.Visible = false;
                     break;
                 case 11:
                     descriptionLabel.Text = "You try to enter the haunted house but the door is locked. You decide to leave and go back to your house.";
+                    option1Label.Text = "";
+                    option2Label.Text = "";
                     option3Label.Text = "Continue";
                     option3Button.Visible = true;
+                    option1Button.Visible = false;
+                    option2Button.Visible = false;
                     break;
                 case 12:
-                    descriptionLabel.Text = "You try to enter the haunted house but the door is locked. You decide to leave and go back to your house.";
+                    descriptionLabel.Text = "When you come home you find the front door broken into and your mom and dad injured on the kitchen floor.";
                     option3Label.Text = "Continue";
                     option3Button.Visible = true;
                     break;
@@ -370,6 +397,154 @@ namespace videoGame
                     option2Button.Visible = false;
                     option3Button.Visible = true;
                     break;
+                case 22:
+                    descriptionLabel.Text = "You live in luxury for the rest of your life.";
+                    option1Label.Text = "";
+                    option2Label.Text = "";
+                    option3Label.Text = "Continue";
+
+                    option1Button.Visible = false;
+                    option2Button.Visible = false;
+                    option3Button.Visible = true;
+                    break;
+                case 23:
+                    descriptionLabel.Text = "You live in luxury for the rest of your life, living a wealthy but unhappy life.";
+                    option1Label.Text = "";
+                    option2Label.Text = "";
+                    option3Label.Text = "Continue";
+
+                    option1Button.Visible = false;
+                    option2Button.Visible = false;
+                    option3Button.Visible = true;
+                    break;
+                case 24:
+                    descriptionLabel.Text = "A week later, your parents have recovered from their injuries.";
+                    option1Label.Text = "";
+                    option2Label.Text = "";
+                    option3Label.Text = "Continue";
+
+                    option1Button.Visible = false;
+                    option2Button.Visible = false;
+                    option3Button.Visible = true;
+                    break;
+                case 25:
+                    descriptionLabel.Text = "Your parents disown you and you die.";
+                    option1Label.Text = "";
+                    option2Label.Text = "";
+                    option3Label.Text = "Continue";
+
+                    option1Button.Visible = false;
+                    option2Button.Visible = false;
+                    option3Button.Visible = true;
+                    break;
+                case 26:
+                    descriptionLabel.Text = "You come to a hill and a lake. You can either climb the hill or swim across the lake for safety.";
+                    option1Label.Text = "Swim";
+                    option2Label.Text = "Climb";
+                    option3Label.Text = "";
+
+                    option1Button.Visible = true;
+                    option2Button.Visible = true;
+                    option3Button.Visible = false;
+                    break;
+                case 27:
+                    descriptionLabel.Text = "You fall backwards down the hill and split your head open.";
+                    option1Label.Text = "";
+                    option2Label.Text = "";
+                    option3Label.Text = "Continue";
+
+                    option1Button.Visible = false;
+                    option2Button.Visible = false;
+                    option3Button.Visible = true;
+                    break;
+                case 28:
+                    descriptionLabel.Text = "You don't know how to swim so you drown.";
+                    option1Label.Text = "";
+                    option2Label.Text = "";
+                    option3Label.Text = "Continue";
+
+                    option1Button.Visible = false;
+                    option2Button.Visible = false;
+                    option3Button.Visible = true;
+                    break;
+                case 29:
+                    descriptionLabel.Text = "On your way to school, you walk by your school bully.";
+                    option1Label.Text = "Run";
+                    option2Label.Text = "Fight";
+                    option3Label.Text = "";
+
+                    option1Button.Visible = true;
+                    option2Button.Visible = true;
+                    option3Button.Visible = false;
+                    break;
+                case 30:
+                    descriptionLabel.Text = "The bully quickly demolishes you to a puddle.";
+                    option1Label.Text = "";
+                    option2Label.Text = "";
+                    option3Label.Text = "Continue";
+
+                    option1Button.Visible = false;
+                    option2Button.Visible = false;
+                    option3Button.Visible = true;
+                    break;
+                case 39:
+                    descriptionLabel.Text = "You decide to not go with your dad and run away from home. You keep running until your reach a fork in the road. To the left is a dark alley. To the right is a haunted house.";
+                    option1Label.Text = "Right";
+                    option2Label.Text = "Left";
+                    option3Label.Text = "";
+
+                    option1Button.Visible = true;
+                    option2Button.Visible = true;
+                    option3Button.Visible = false;
+                    break;
+                case 96:
+                    descriptionLabel.Text = "You unfortuntely passed away. Would you like to play again?";
+                    option1Label.Text = "Yes";
+                    option2Label.Text = "No";
+                    option3Label.Text = "";
+
+                    option1Button.Visible = true;
+                    option2Button.Visible = true;
+                    option3Button.Visible = false;
+                    break;
+                case 97:
+                    descriptionLabel.Text = "Would you like to play again?";
+                    option1Label.Text = "Yes";
+                    option2Label.Text = "No";
+                    option3Label.Text = "";
+
+                    option1Button.Visible = true;
+                    option2Button.Visible = true;
+                    option3Button.Visible = false;
+                    break;
+                case 98:
+                    descriptionLabel.Text = "Thank you for playing!";
+                    option1Label.Text = "";
+                    option2Label.Text = "";
+                    option3Label.Text = "";
+
+                    option1Button.Visible = false;
+                    option2Button.Visible = false;
+                    option3Button.Visible = false;
+                    Refresh();                   
+                    Thread.Sleep(3000);
+                    this.Close();
+                    break;
+                case 99:
+                    descriptionLabel.Text = "You live a wealthy and happy rest of your life. Congradulations!";
+                    option1Label.Text = "";
+                    option2Label.Text = "";
+                    option3Label.Text = "";
+
+                    option1Button.Visible = false;
+                    option2Button.Visible = false;
+                    option3Button.Visible = false;
+                    Refresh();
+                    Thread.Sleep(3000);
+                    page = 96;
+                    break;
+
+
             }
 
 
@@ -405,13 +580,53 @@ namespace videoGame
             {
                 page = 19;
             }
-            else if (page ==18)
+            else if (page == 18)
             {
                 page = 20;
             }
             else if (page == 19)
             {
                 page = 96;
+            }
+            else if (page == 22)
+            {
+                page  = 99;
+            }
+            else if (page == 24)
+            {
+                page = 25;
+            }
+            else if (page == 25)
+            {
+                page = 96;
+            }
+            else if (page == 27)
+            {
+                page = 96;
+            }
+            else if (page == 28)
+            {
+                page = 96;
+            }
+            else if (page == 30)
+            {
+                page = 96;
+            }
+            else if(page == 39)
+            {
+                page = 96;
+            }
+            else if(page == 11)
+            {
+                page = 12;
+            }
+            else if(page == 12)
+            {
+                page = 13;
+            }
+            else if(page == 14)
+            {
+                page = 15;
             }
             DisplayPage();
         }
