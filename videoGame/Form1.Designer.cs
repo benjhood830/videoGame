@@ -37,6 +37,8 @@
             this.option1Label = new System.Windows.Forms.Label();
             this.option2Label = new System.Windows.Forms.Label();
             this.option3Label = new System.Windows.Forms.Label();
+            this.imageBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -67,7 +69,7 @@
             this.descriptionLabel.BackColor = System.Drawing.Color.Black;
             this.descriptionLabel.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descriptionLabel.ForeColor = System.Drawing.Color.White;
-            this.descriptionLabel.Location = new System.Drawing.Point(89, 9);
+            this.descriptionLabel.Location = new System.Drawing.Point(98, 9);
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.Size = new System.Drawing.Size(621, 107);
             this.descriptionLabel.TabIndex = 2;
@@ -132,6 +134,15 @@
             this.option3Label.Size = new System.Drawing.Size(581, 52);
             this.option3Label.TabIndex = 8;
             // 
+            // imageBox
+            // 
+            this.imageBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.imageBox.Location = new System.Drawing.Point(241, 87);
+            this.imageBox.Name = "imageBox";
+            this.imageBox.Size = new System.Drawing.Size(313, 158);
+            this.imageBox.TabIndex = 9;
+            this.imageBox.TabStop = false;
+            // 
             // videoGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,12 +154,14 @@
             this.Controls.Add(this.option2Button);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.titleLabel);
-            this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.option1Label);
             this.Controls.Add(this.option2Label);
             this.Controls.Add(this.option3Label);
+            this.Controls.Add(this.imageBox);
+            this.Controls.Add(this.descriptionLabel);
             this.Name = "videoGame";
             this.Text = "School Day";
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,6 +178,7 @@
         private System.Windows.Forms.Label option1Label;
         private System.Windows.Forms.Label option2Label;
         private System.Windows.Forms.Label option3Label;
+        private System.Windows.Forms.PictureBox imageBox;
     }
 }
 

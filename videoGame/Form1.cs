@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 // "descriptionLabel" is the name od the label to ouput the current situation
 //option 1 = red
@@ -25,6 +26,7 @@ namespace videoGame
 
         private void startButton_Click(object sender, EventArgs e)
         {
+            // method that displays page
             page = 1;
             DisplayPage();
         }
@@ -48,6 +50,7 @@ namespace videoGame
             }
             else if (page == 6)
             {
+                //only 5% chance
                 int randValue = randGen.Next(1, 101);
 
                 if(randValue < 5)
@@ -198,6 +201,7 @@ namespace videoGame
 
             switch(page)
             {
+                //properties for my pages
                 case 1:
                     titleLabel.Text = "";
                     startButton.Visible = false;
@@ -208,11 +212,14 @@ namespace videoGame
                     option1Label.Text = "Keep Sleeping";
                     option2Label.Text = "Wake up";
                     option3Label.Text = "Die";
+                    imageBox.BackgroundImage = Properties.Resources.sunrise;
+                    SoundPlayer birds = new SoundPlayer(Properties.Resources.Bird);
                     break;
                 case 2:
                     descriptionLabel.Text = "It's now 10 am and your mother comes in FURIOUS.";
                     option1Label.Text = "Punch your mother";
                     option2Label.Text = "Run away";
+                    imageBox.BackgroundImage = Properties.Resources.mad_mom;
                     break;
                 case 3:
                     descriptionLabel.Text = "Your mother retaliates with sucker punching you in the face.";
@@ -223,6 +230,7 @@ namespace videoGame
                     option3Button.Visible = true;
                     option1Button.Visible = false;
                     option2Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.punch;
                     break;
                 case 4:
                     descriptionLabel.Text = "Your father grabs you off the floor and wants to brings you to the hospital. ";
@@ -233,6 +241,7 @@ namespace videoGame
                     option3Button.Visible = false;
                     option1Button.Visible = true;
                     option2Button.Visible = true;
+                    imageBox.BackgroundImage = Properties.Resources.hospital;
                     break;
                 case 5:
                     descriptionLabel.Text = "You finally reach an alley to hide in. You see a strange looking man in the alley hiding behind the dumpster. You decide to ignore him and run the other way down the alley.";
@@ -243,6 +252,7 @@ namespace videoGame
                     option3Button.Visible = true;
                     option1Button.Visible = false;
                     option2Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.alley;
                     break;
                 case 6:
                     descriptionLabel.Text = "While arguing with you, your father hits a bump in the road and the car slides off the road into the gutter.";
@@ -253,6 +263,7 @@ namespace videoGame
                     option3Button.Visible = false;
                     option1Button.Visible = true;
                     option2Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.pot_hole;
                     break;
                 case 7:
                     descriptionLabel.Text = "You leave your father for dead in the car wreck and walk to the hospital.";
@@ -263,6 +274,7 @@ namespace videoGame
                     option3Button.Visible = true;
                     option1Button.Visible = false;
                     option2Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.crash_car;
                     break;
                 case 8:
                     descriptionLabel.Text = "Your mother forgives you and you get the rest of the day off school.";
@@ -273,6 +285,7 @@ namespace videoGame
                     option3Button.Visible = true;
                     option1Button.Visible = false;
                     option2Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.happy_mom;
                     break;
                 case 9:
                     descriptionLabel.Text = "There's a man hiding behind a dumpster in the alley. He pops out and takes a swing at you with a baseball bat.";
@@ -283,6 +296,7 @@ namespace videoGame
                     option3Button.Visible = false;
                     option1Button.Visible = true;
                     option2Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.alley;
                     break;
                 case 10:
                     descriptionLabel.Text = "You barely make it out alive but manage to run back the way you came from and into the haunted house.";
@@ -292,6 +306,7 @@ namespace videoGame
                     option3Button.Visible = true;
                     option2Button.Visible = false; 
                     option1Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.haunted_house;
                     break;
                 case 11:
                     descriptionLabel.Text = "You try to enter the haunted house but the door is locked. You decide to leave and go back to your house.";
@@ -301,11 +316,14 @@ namespace videoGame
                     option3Button.Visible = true;
                     option1Button.Visible = false;
                     option2Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.haunted_house;
+                    SoundPlayer Crows = new SoundPlayer(Properties.Resources.Crows);
                     break;
                 case 12:
                     descriptionLabel.Text = "When you come home you find the front door broken into and your mom and dad injured on the kitchen floor.";
                     option3Label.Text = "Continue";
                     option3Button.Visible = true;
+                    imageBox.BackgroundImage = Properties.Resources.broken_house;
                     break;
                 case 13:
                     descriptionLabel.Text = "You can decide to leave them there to die, or put them in the car and take them to the hospital.";
@@ -316,9 +334,10 @@ namespace videoGame
                     option1Button.Visible = true;
                     option2Button.Visible = true;
                     option3Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.hospital;
                     break;
                 case 14:
-                    descriptionLabel.Text = "10 years later, you run out of money going to college and are forced to play guitar on the streets for money.";
+                    descriptionLabel.Text = "10 years later, you run out of money while going to college and are forced to play guitar on the streets for money.";
                     option1Label.Text = "";
                     option2Label.Text = "";
                     option3Label.Text = "Continue";
@@ -326,6 +345,7 @@ namespace videoGame
                     option1Button.Visible = false;
                     option2Button.Visible = false;
                     option3Button.Visible = true;
+                    imageBox.BackgroundImage = Properties.Resources.guitar;
                     break;
                 case 15:
                     descriptionLabel.Text = "You begin to gain popularity of a couple of years playing. RBMG records discovers and online video of you playing and shows interest in you.";
@@ -336,6 +356,7 @@ namespace videoGame
                     option1Button.Visible = true;
                     option2Button.Visible = false;
                     option3Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.RBMG;
                     break;
                 case 16:
                     descriptionLabel.Text = "You and RBMG release your debut album.";
@@ -346,6 +367,7 @@ namespace videoGame
                     option1Button.Visible = true;
                     option2Button.Visible = false;
                     option3Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.RBMG;
                     break;
                 case 17:
                     descriptionLabel.Text = "You continue your guitar playing on the streets for another 2 years. You finally save enough money to afford your own recording session.";
@@ -356,6 +378,7 @@ namespace videoGame
                     option1Button.Visible = false;
                     option2Button.Visible = false;
                     option3Button.Visible = true;
+                    imageBox.BackgroundImage = Properties.Resources.guitar;
                     break;
                 case 18:
                     descriptionLabel.Text = "Your song/songs went viral and you earn 1 million dollars and are able to purchase a house in Los Angeles.";
@@ -366,6 +389,7 @@ namespace videoGame
                     option1Button.Visible = false;
                     option2Button.Visible = false;
                     option3Button.Visible = true;
+                    imageBox.BackgroundImage = Properties.Resources.nicer_house;
                     break;
                 case 19:
                     descriptionLabel.Text = "After finished recording, you decide to publish your song.";
@@ -376,6 +400,7 @@ namespace videoGame
                     option1Button.Visible = true;
                     option2Button.Visible = false;
                     option3Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.song_gif;
                     break;
                 case 20:
                     descriptionLabel.Text = "With your remaining $50,000 you decide to gamble it all at a casino.";
@@ -386,6 +411,7 @@ namespace videoGame
                     option1Button.Visible = true;
                     option2Button.Visible = false;
                     option3Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.casino_gaming;
                     break;
                 case 21:
                     descriptionLabel.Text = "You lose all your money and overdose 10 days later.";
@@ -396,6 +422,7 @@ namespace videoGame
                     option1Button.Visible = false;
                     option2Button.Visible = false;
                     option3Button.Visible = true;
+                    imageBox.BackgroundImage = Properties.Resources.overdoes;
                     break;
                 case 22:
                     descriptionLabel.Text = "You live in luxury for the rest of your life.";
@@ -406,6 +433,7 @@ namespace videoGame
                     option1Button.Visible = false;
                     option2Button.Visible = false;
                     option3Button.Visible = true;
+                    imageBox.BackgroundImage = Properties.Resources.moey;
                     break;
                 case 23:
                     descriptionLabel.Text = "You live in luxury for the rest of your life, living a wealthy but unhappy life.";
@@ -416,6 +444,7 @@ namespace videoGame
                     option1Button.Visible = false;
                     option2Button.Visible = false;
                     option3Button.Visible = true;
+                    imageBox.BackgroundImage = Properties.Resources.moey;
                     break;
                 case 24:
                     descriptionLabel.Text = "A week later, your parents have recovered from their injuries.";
@@ -426,6 +455,7 @@ namespace videoGame
                     option1Button.Visible = false;
                     option2Button.Visible = false;
                     option3Button.Visible = true;
+                    imageBox.BackgroundImage = Properties.Resources.hospital;
                     break;
                 case 25:
                     descriptionLabel.Text = "Your parents disown you and you die.";
@@ -436,6 +466,7 @@ namespace videoGame
                     option1Button.Visible = false;
                     option2Button.Visible = false;
                     option3Button.Visible = true;
+                    imageBox.BackgroundImage = Properties.Resources.die;
                     break;
                 case 26:
                     descriptionLabel.Text = "You come to a hill and a lake. You can either climb the hill or swim across the lake for safety.";
@@ -446,6 +477,8 @@ namespace videoGame
                     option1Button.Visible = true;
                     option2Button.Visible = true;
                     option3Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.hill4;
+                    SoundPlayer Bird = new SoundPlayer(Properties.Resources.Bird);
                     break;
                 case 27:
                     descriptionLabel.Text = "You fall backwards down the hill and split your head open.";
@@ -456,6 +489,7 @@ namespace videoGame
                     option1Button.Visible = false;
                     option2Button.Visible = false;
                     option3Button.Visible = true;
+                    imageBox.BackgroundImage = Properties.Resources.die;
                     break;
                 case 28:
                     descriptionLabel.Text = "You don't know how to swim so you drown.";
@@ -466,6 +500,7 @@ namespace videoGame
                     option1Button.Visible = false;
                     option2Button.Visible = false;
                     option3Button.Visible = true;
+                    imageBox.BackgroundImage = Properties.Resources.die;
                     break;
                 case 29:
                     descriptionLabel.Text = "On your way to school, you walk by your school bully.";
@@ -476,6 +511,7 @@ namespace videoGame
                     option1Button.Visible = true;
                     option2Button.Visible = true;
                     option3Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.bully;
                     break;
                 case 30:
                     descriptionLabel.Text = "The bully quickly demolishes you to a puddle.";
@@ -486,6 +522,7 @@ namespace videoGame
                     option1Button.Visible = false;
                     option2Button.Visible = false;
                     option3Button.Visible = true;
+                    imageBox.BackgroundImage = Properties.Resources.die;
                     break;
                 case 39:
                     descriptionLabel.Text = "You decide to not go with your dad and run away from home. You keep running until your reach a fork in the road. To the left is a dark alley. To the right is a haunted house.";
@@ -496,6 +533,7 @@ namespace videoGame
                     option1Button.Visible = true;
                     option2Button.Visible = true;
                     option3Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.fork;
                     break;
                 case 96:
                     descriptionLabel.Text = "You unfortuntely passed away. Would you like to play again?";
@@ -506,6 +544,7 @@ namespace videoGame
                     option1Button.Visible = true;
                     option2Button.Visible = true;
                     option3Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.die;
                     break;
                 case 97:
                     descriptionLabel.Text = "Would you like to play again?";
@@ -516,6 +555,7 @@ namespace videoGame
                     option1Button.Visible = true;
                     option2Button.Visible = true;
                     option3Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.play_again;
                     break;
                 case 98:
                     descriptionLabel.Text = "Thank you for playing!";
@@ -526,6 +566,7 @@ namespace videoGame
                     option1Button.Visible = false;
                     option2Button.Visible = false;
                     option3Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.thank_you;
                     Refresh();                   
                     Thread.Sleep(3000);
                     this.Close();
@@ -539,6 +580,7 @@ namespace videoGame
                     option1Button.Visible = false;
                     option2Button.Visible = false;
                     option3Button.Visible = false;
+                    imageBox.BackgroundImage = Properties.Resources.moey;
                     Refresh();
                     Thread.Sleep(3000);
                     page = 96;

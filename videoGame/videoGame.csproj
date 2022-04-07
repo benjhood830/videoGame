@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +79,87 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sunrise.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sunrise.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mad mom.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\punch.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\punch.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hospital.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alley.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pot hole.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crash car.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happy mom.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\haunted house.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\broken house.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guitar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RBMG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nicer house.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\song gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\casino-gaming.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\overdoes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moey.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\die.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hill4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bully.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fork.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play again.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thank you.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\339326__inspectorj__bird-whistling-a.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\353432__blimp66__crows.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
