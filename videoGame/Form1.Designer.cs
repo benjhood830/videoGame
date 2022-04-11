@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(videoGame));
             this.titleLabel = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
             this.descriptionLabel = new System.Windows.Forms.Label();
@@ -159,6 +160,7 @@
             this.Controls.Add(this.option3Label);
             this.Controls.Add(this.imageBox);
             this.Controls.Add(this.descriptionLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "videoGame";
             this.Text = "School Day";
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();

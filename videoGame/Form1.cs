@@ -50,7 +50,7 @@ namespace videoGame
             }
             else if (page == 6)
             {
-                //only 5% chance
+                //only 5% chance and the else statement covers the other 95%
                 int randValue = randGen.Next(1, 101);
 
                 if(randValue < 5)
@@ -77,7 +77,7 @@ namespace videoGame
             else if (page == 9)
             {
                 int randValue = randGen.Next(1, 101);
-
+                //random 50% chance
                 if(randValue > 50)
                 {
                     page = 10;
@@ -93,6 +93,7 @@ namespace videoGame
             }
             else if (page == 16)
             {
+                //random 60% chance
                 int randValue = randGen.Next(1, 101);
 
                 if (randValue < 60)
@@ -106,6 +107,7 @@ namespace videoGame
             }
             else if (page == 19)
             {
+                //random 90% chance
                 int randValue = randGen.Next(1, 101);
 
                 if(randValue < 90)
@@ -119,6 +121,7 @@ namespace videoGame
             }
             else if (page == 20)
             {
+                //random 90% chance
                 int randValue = randGen.Next(1, 101);
                 if (randValue > 90)
                 {
@@ -145,6 +148,7 @@ namespace videoGame
             {
                 page = 16;
             }
+            //function to display the curent page
             DisplayPage();
         }
 
@@ -194,6 +198,7 @@ namespace videoGame
             {
                 page = 98;
             }
+            //function to display the current page
             DisplayPage();
         }
         public void DisplayPage()
@@ -201,7 +206,7 @@ namespace videoGame
 
             switch(page)
             {
-                //properties for my pages
+                //Properties for my pages
                 case 1:
                     titleLabel.Text = "";
                     startButton.Visible = false;
@@ -585,7 +590,7 @@ namespace videoGame
                     Thread.Sleep(3000);
                     page = 96;
                     break;
-
+                    //the thread sleep function above allows the program to wait 3 seconds before sending the user page 96
 
             }
 
@@ -670,6 +675,7 @@ namespace videoGame
             {
                 page = 15;
             }
+            //function to display page
             DisplayPage();
         }
        
